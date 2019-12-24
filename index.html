@@ -7,12 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Anggerian Wijaya</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet"> 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
    	<style type="text/css">
    		 nav.navbar {
 	      height: 5rem !important;
 	    }
-
+	    body{
+	    	font-family: 'Open Sans', sans-serif;
+	    }
+		
    	</style>
 <body>
 <section class="hero is-medium">
@@ -21,18 +25,18 @@
 			<div class="container is-size-6">
 				<div class="navbar-brand">
 					<a class="navbar-item has-text-weight-semibold is-uppercase">W i j a y a</a>
-					<div class="navbar-burger burger"  data-target="navbarExampleTransparentExample">
+					<div class="navbar-burger burger"  data-target="nav">
 						<span></span>
 						<span></span>
 						<span></span>
 					</div>			
 				</div>
-				<div class="navbar-menu" id="navbarExampleTransparentExample">
+				<div class="navbar-menu" id="nav">
 					<div class="navbar-end ">
-						<a href="index.html" class="navbar-item ">Home</a>
-						<a href="index.html" class="navbar-item">About</a>
-						<a href="index.html" class="navbar-item">Portofolio</a>
-						<a href="index.html" class="navbar-item">Hire</a>
+						<a href="index.html" class="navbar-item is-active">Home</a>
+						<a href="index.html" class="navbar-item is-active">About</a>
+						<a href="index.html" class="navbar-item is-active">Portofolio</a>
+						<a href="index.html" class="navbar-item is-active">Hire</a>
 					</div>
 				</div>					
 			</div>
@@ -85,8 +89,8 @@
 					-->
 					<br>
 					<br>
-					<div class="buttons is-left">
-						<button class="button is-capitalized is-dark has-background-black is-rounded">Learn More</button>
+					<div class="buttons is-left is-mobile">
+						<button class="button is-capitalized is-dark is-rounded ">Learn More</button>
 					</div>
 					<br>
 					<br>
@@ -172,5 +176,15 @@
 </div>
 
 </body>
-<script src="../js/bulma.js"></script>
+<script type="text/javascript">
+	(function(){
+		var burger = document.querySelector('.burger');
+		var nav = document.querySelector('#'+burger.dataset.target);
+
+		burger.addEventListener('click', function() {
+			burger.classList.toggle('is-active');
+			nav.classList.toggle('is-active');
+		});
+	});
+</script>
 </html>
